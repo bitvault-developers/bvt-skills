@@ -1,0 +1,25 @@
+name: Language or framework request
+description: Ask for a framework, platform or language that bvt-multi-language should support better
+labels: [enhancement, bvt-multi-language]
+body:
+  - type: input
+    id: target
+    attributes:
+      label: Framework, platform or language
+      placeholder: "e.g. SvelteKit, Kotlin Multiplatform, Swahili, Tamil"
+    validations:
+      required: true
+  - type: textarea
+    id: need
+    attributes:
+      label: What do you need?
+      description: What should Claude do for this framework or language that it does not do well today?
+    validations:
+      required: true
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Can you help?
+      options:
+        - label: I can test it on a real project
+        - label: I am a native speaker and can review translations

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Questions and ideas
+    url: https://github.com/bitvault-developers/bvt-skills/discussions
+    about: Ask how to use a skill or share an idea
+  - name: Report a security problem
+    url: https://github.com/bitvault-developers/bvt-skills/security/policy
+    about: Please report security problems privately, not in a public issue

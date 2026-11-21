@@ -92,7 +92,7 @@ Glossary CSV (`term,lang,translation`; `*` = all languages; empty translation = 
 
 ```csv
 term,lang,translation
-BitVault,*,
+YourBrand,*,
 Wallet,hi,वॉलेट
 ```
 

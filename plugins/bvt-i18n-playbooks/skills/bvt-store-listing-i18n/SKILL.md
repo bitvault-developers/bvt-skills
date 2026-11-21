@@ -1,6 +1,6 @@
 ---
 name: bvt-store-listing-i18n
-description: Localizes BitVault app store listings and metadata for the App Store and Google Play, covering supported metadata languages, locale inheritance, keyword research per market and localized screenshots. Use when preparing a store listing for a new market, translating app metadata, or planning app store optimization across languages.
+description: Localizes crypto app store listings and metadata for the App Store and Google Play, covering supported metadata languages, locale inheritance, keyword research per market and localized screenshots. Use when preparing a store listing for a new market, translating app metadata, or planning app store optimization across languages.
 ---
 
 # Store Listing Localization
@@ -33,7 +33,7 @@ Users bounce when the store page is in their language and the app opens in Engli
 ## Crypto-specific listing constraints
 Store copy must not overstate: no yield promises, no "guaranteed", no price projections, and the same risk framing in every language. Apple's crypto rules and Google's financial-features declarations apply to the **localized** listing too — a claim that is fine in English and stronger in translation is a rejection risk, and a regulator in that market reads the local version.
 
-Keep the do-not-translate list in force: BVT, BRUSD, BRINR, BitVault, BVTEx are identifiers in every listing.
+Keep the do-not-translate list in force: ticker symbols, the brand name and product names are identifiers in every listing.
 
 ## Support content
 Localize at minimum: the seed-phrase backup article, the recovery article, and the "we will never ask for your seed phrase" notice. These carry the anti-phishing load in-market.

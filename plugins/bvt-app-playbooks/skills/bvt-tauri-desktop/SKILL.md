@@ -1,6 +1,6 @@
 ---
 name: bvt-tauri-desktop
-description: Builds and packages the BitVault desktop application with Tauri version two, covering the capabilities and permissions model, webview content security policy, inter process communication, secret storage and Rust command design. Use for any Tauri desktop shell code, tauri.conf.json changes, command definitions or desktop secret handling.
+description: Builds and packages a crypto desktop app with Tauri version two, covering the capabilities and permissions model, webview content security policy, inter process communication, secret storage and Rust command design. Use for any Tauri desktop shell code, tauri.conf.json changes, command definitions or desktop secret handling.
 ---
 
 # Tauri v2 Desktop Shell

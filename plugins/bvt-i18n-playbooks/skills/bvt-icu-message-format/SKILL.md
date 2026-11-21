@@ -1,6 +1,6 @@
 ---
 name: bvt-icu-message-format
-description: Writes ICU MessageFormat strings for BitVault including plurals, select, gender, nested arguments, interpolation and escaping. Use when authoring or reviewing any translatable string that contains a variable, a count, a conditional or embedded formatting.
+description: Writes ICU MessageFormat strings for apps including plurals, select, gender, nested arguments, interpolation and escaping. Use when authoring or reviewing any translatable string that contains a variable, a count, a conditional or embedded formatting.
 ---
 
 # ICU MessageFormat

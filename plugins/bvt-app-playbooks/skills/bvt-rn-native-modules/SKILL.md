@@ -1,6 +1,6 @@
 ---
 name: bvt-rn-native-modules
-description: Designs and writes native modules for BitVault React Native apps when JavaScript cannot do the job, using Expo Modules API or TurboModules with JSI. Use when a feature requires platform APIs, when moving a performance-critical or security-critical operation off the JavaScript thread, or when evaluating whether a native module is necessary at all.
+description: Designs and writes native modules for React Native apps when JavaScript cannot do the job, using Expo Modules API or TurboModules with JSI. Use when a feature requires platform APIs, when moving a performance-critical or security-critical operation off the JavaScript thread, or when evaluating whether a native module is necessary at all.
 ---
 
 # Native Modules

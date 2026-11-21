@@ -1,6 +1,6 @@
 ---
 name: bvt-singlefile-migration
-description: Migrates BitVault's three hand-synced single-file React builds into a shared TypeScript core with thin platform shells. Use when extracting code out of BVTWallet.jsx, BVTWallet_mobile.jsx or BVTWallet_extension.jsx, deciding what belongs in a shared package, or planning the order of a strangler-fig migration off the single-file architecture.
+description: Migrates hand-synced single-file React builds (web, mobile, extension) into a shared TypeScript core with thin platform shells. Use when extracting code out of single-file builds such as App.jsx, App_mobile.jsx or App_extension.jsx, deciding what belongs in a shared package, or planning the order of a strangler-fig migration off the single-file architecture.
 ---
 
 # Single-File → Shared-Core Migration
@@ -13,10 +13,10 @@ A big-bang rewrite of 48k lines that handles private keys is how funds get lost.
 
 ## Extraction order (do not reorder)
 1. **Crypto / keys** → `packages/core`. Write exhaustive BIP-39/32/44 test vectors **before** moving a single line. This is the only step where a bug is unrecoverable.
-2. **RPC + token registry** → `packages/rpc`. L1 client, BVM L2 (chainId 31338), the ~909 wrapped tokens, logo resolution.
-3. **Business logic** → `packages/business`. Subscription (`BRUSD.approve` → `subscribe()`), bridge, stablecoin/oracle reads.
+2. **RPC + token registry** → `packages/rpc`. L1 and L2 clients, the token list (often hundreds of tokens), logo resolution.
+3. **Business logic** → `packages/business`. Subscription (`token.approve` → `subscribe()`), bridge, stablecoin/oracle reads.
 4. **Shared UI primitives** → `packages/ui`, react-native-web where it pays.
-5. **Build the Expo shell**, wire it to core, then **delete `BVTWallet_mobile.jsx`**.
+5. **Build the Expo shell**, wire it to core, then **delete the old `<App>_mobile.jsx`**.
 6. Web and extension become shells over the same core last.
 
 ## Per-seam procedure

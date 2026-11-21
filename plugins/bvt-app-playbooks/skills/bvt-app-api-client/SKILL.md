@@ -1,6 +1,6 @@
 ---
 name: bvt-app-api-client
-description: Designs typed client code for BitVault backend and exchange APIs including request signing, idempotency, pagination, error taxonomy and response validation. Use when calling the BVTEx trading API, the subscription or profile backend, or any BitVault HTTP or websocket service from an app shell.
+description: Designs typed client code for backend and exchange APIs including request signing, idempotency, pagination, error taxonomy and response validation. Use when calling an exchange trading API, a subscription or profile backend, or any HTTP or websocket service from an app shell.
 ---
 
 # App API Client
@@ -30,7 +30,7 @@ Respect `429` + `Retry-After` and back off globally, not per-call.
 Cursor-based (`fromId` / `startTime` + `limit`). Offset pagination duplicates and skips rows under concurrent inserts — visible to users as a missing trade in their history.
 
 ## Subscription flow (on-chain, not an API)
-The 10 BRUSD/month subscription is a **chain interaction**, not an HTTP call: `BRUSD.approve(subscriptionContract, amount)` then `subscribe()`. Show both steps in the UI — a user who approves and then backgrounds the app has not subscribed, and must be able to resume at step two. Never re-request approval if allowance is already sufficient.
+A stablecoin-paid subscription is a **chain interaction**, not an HTTP call: `token.approve(subscriptionContract, amount)` then `subscribe()`. Show both steps in the UI — a user who approves and then backgrounds the app has not subscribed, and must be able to resume at step two. Never re-request approval if allowance is already sufficient.
 
 ## Websocket
 Same discipline as the REST client: typed events parsed at the boundary, explicit reconnect, sequence tracking (see `bvt-exchange-client-ui`).

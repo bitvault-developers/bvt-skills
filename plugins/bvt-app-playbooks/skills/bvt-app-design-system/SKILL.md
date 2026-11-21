@@ -1,6 +1,6 @@
 ---
 name: bvt-app-design-system
-description: Applies BitVault's design system across the mobile, desktop, web and extension app shells, covering design tokens, token colour conventions, component structure and dark mode. Use when building or restyling UI components, adding a screen, defining spacing or typography, or keeping visual behaviour consistent between platforms.
+description: Applies your design system across the mobile, desktop, web and extension app shells, covering design tokens, token colour conventions, component structure and dark mode. Use when building or restyling UI components, adding a screen, defining spacing or typography, or keeping visual behaviour consistent between platforms.
 ---
 
 # App Design System
@@ -8,7 +8,7 @@ description: Applies BitVault's design system across the mobile, desktop, web an
 ## Tokens live in one place
 `packages/config/tokens.ts` — colours, spacing scale, radii, typography, motion durations. Every shell imports from it. **No hardcoded hex values, no magic pixel numbers in components.** A colour that appears in a component file is a bug.
 
-Token colours are fixed identity, not theme: **BVT blue · BRUSD silver · BRINR green.** They do not change between light and dark mode; only their surrounding surfaces do.
+Token colours are fixed identity, not theme: **give each token one colour** (for example main token blue, USD stablecoin silver, INR stablecoin green). They do not change between light and dark mode; only their surrounding surfaces do.
 
 ## Cross-platform component strategy
 - Primitives (`Text`, `Button`, `Card`, `Sheet`, `Field`) live in `packages/ui`, written against React Native primitives and rendered on web via **react-native-web**.

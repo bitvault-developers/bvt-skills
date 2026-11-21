@@ -1,12 +1,12 @@
 ---
 name: bvt-app-rpc-resilience
-description: Builds resilient chain connectivity for BitVault apps against the layer one node and the BVM layer two, covering endpoint failover, retry and backoff, request batching, timeouts, reorg awareness and network switching. Use when writing or debugging RPC client code, handling node errors or timeouts, or adding a new chain endpoint to an app.
+description: Builds resilient chain connectivity for crypto apps against layer one and layer two nodes, covering endpoint failover, retry and backoff, request batching, timeouts, reorg awareness and network switching. Use when writing or debugging RPC client code, handling node errors or timeouts, or adding a new chain endpoint to an app.
 ---
 
 # RPC Resilience
 
 ## Multiple endpoints, always
-A single RPC host is a single point of failure for the whole app. Configure an ordered list per chain (BVM L2 = chainId 31338, plus the L1 endpoint) and fail over on error, timeout, or a health check.
+A single RPC host is a single point of failure for the whole app. Configure an ordered list per chain (for example your L2 endpoints plus the L1 endpoints) and fail over on error, timeout, or a health check.
 
 - Health: periodic `eth_blockNumber`; an endpoint more than N blocks behind the best-known height is **unhealthy even though it responds**. Silent lag is the dangerous failure — it returns stale balances with a 200.
 - Sticky routing per session for consistency, but re-evaluate on failure.
@@ -22,7 +22,7 @@ Explicit per call class: reads ~5s, `eth_getLogs` ranges ~15s, broadcast ~20s. A
 
 ## Batching and rate limits
 - Batch reads with `Promise.all`, but respect the node's batch limit; chunk large multicalls.
-- For 909 tokens, **never issue 909 balance calls.** Use a multicall aggregator, or fetch only the user's non-zero set from an indexer and lazy-load the rest on search.
+- For hundreds of tokens, **never issue one balance call per token.** Use a multicall aggregator, or fetch only the user's non-zero set from an indexer and lazy-load the rest on search.
 - Client-side rate limiting so a screen mount can't stampede the node.
 
 ## Chain correctness

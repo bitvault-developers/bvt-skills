@@ -1,6 +1,6 @@
 ---
 name: bvt-deeplinks-walletconnect
-description: Implements WalletConnect v2 session handling and deep linking for BitVault across iOS, Android, desktop and the browser extension. Use when pairing with dapps, handling session proposals and requests, configuring universal links or URI schemes, or debugging reconnection and redirect behaviour.
+description: Implements WalletConnect v2 session handling and deep linking for a crypto wallet across iOS, Android, desktop and the browser extension. Use when pairing with dapps, handling session proposals and requests, configuring universal links or URI schemes, or debugging reconnection and redirect behaviour.
 ---
 
 # WalletConnect v2 & Deep Links
@@ -20,7 +20,7 @@ One shared `Core` instance per app. One project id.
 
 Rules:
 - **Never auto-approve a proposal.** Show the dapp origin, the requested chains, the requested methods, and the accounts being exposed.
-- **Scope namespaces tightly.** Approve only BVM (`eip155:31338`) and only the accounts the user picked. Blanket-approving every requested chain is how a wallet ends up signing on a network the user never intended.
+- **Scope namespaces tightly.** Approve only your chain (for example `eip155:1`) and only the accounts the user picked. Blanket-approving every requested chain is how a wallet ends up signing on a network the user never intended.
 - Handle `session_delete`, `session_expire`, and `session_update`; show active sessions in a settings screen with a per-session disconnect.
 - Persist sessions and restore on cold start.
 
@@ -28,7 +28,7 @@ Rules:
 Decode the calldata against the known ABI and show the *effect*: contract, function, token, amount, recipient, fee. An undecodable request renders as raw calldata with a prominent warning — never as a bare "Approve".
 
 ## Deep links
-- Universal Links (iOS) / App Links (Android) preferred over custom schemes; keep a `bitvault://` scheme as fallback.
+- Universal Links (iOS) / App Links (Android) preferred over custom schemes; keep a custom `yourapp://` scheme as fallback.
 - **Validate and parse every incoming link with a schema.** A deep link is untrusted input from any app or web page on the device.
 - Redirect back to the dapp after responding, using the session's `redirect` metadata, or the user is stranded in the wallet.
 

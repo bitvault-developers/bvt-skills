@@ -1,6 +1,6 @@
 ---
 name: bvt-translation-pipeline
-description: Runs BitVault's translation pipeline from source string to shipped locale, covering translation management system choice, continuous sync, completeness gates in continuous integration, and over the air translation delivery within app store rules. Use when setting up or changing the localization toolchain, adding a language to the pipeline, or shipping a translation fix without a full release.
+description: Runs your translation pipeline from source string to shipped locale, covering translation management system choice, continuous sync, completeness gates in continuous integration, and over the air translation delivery within app store rules. Use when setting up or changing the localization toolchain, adding a language to the pipeline, or shipping a translation fix without a full release.
 ---
 
 # Translation Pipeline

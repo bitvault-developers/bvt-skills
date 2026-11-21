@@ -1,6 +1,6 @@
 ---
 name: bvt-rtl-layout
-description: Implements right to left layout for Arabic, Hebrew, Farsi and Urdu across BitVault mobile, desktop, web and extension shells, covering layout mirroring, icon flipping, bidirectional text isolation and the restart requirement. Use when adding an RTL language, fixing a mirrored layout, or rendering an address or amount inside RTL text.
+description: Implements right to left layout for Arabic, Hebrew, Farsi and Urdu across mobile, desktop, web and extension shells, covering layout mirroring, icon flipping, bidirectional text isolation and the restart requirement. Use when adding an RTL language, fixing a mirrored layout, or rendering an address or amount inside RTL text.
 ---
 
 # RTL Layout

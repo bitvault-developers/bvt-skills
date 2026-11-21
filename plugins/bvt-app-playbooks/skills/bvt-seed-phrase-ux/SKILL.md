@@ -1,6 +1,6 @@
 ---
 name: bvt-seed-phrase-ux
-description: Builds seed phrase creation, backup, verification and recovery screens for BitVault wallets with correct screen-capture protection and clipboard handling. Use when implementing wallet creation, twelve word backup or confirmation flows, recovery phrase import, or any screen that displays private key material.
+description: Builds seed phrase creation, backup, verification and recovery screens for crypto wallets with correct screen-capture protection and clipboard handling. Use when implementing wallet creation, twelve word backup or confirmation flows, recovery phrase import, or any screen that displays private key material.
 ---
 
 # Seed Phrase UX & Screen Protection
@@ -32,7 +32,7 @@ Any copy of a seed or private key auto-clears after ~30–60s and shows that it 
 
 ## Copy that must not be softened
 - The phrase is the wallet. Anyone with it controls the funds.
-- BitVault cannot recover it. There is no reset.
+- [App name] cannot recover it. There is no reset.
 - **No support flow will ever ask for it** — state this in the flow itself, because that sentence is the anti-phishing control.
 - TOTP 2FA protects app access, **not** the seed.
 

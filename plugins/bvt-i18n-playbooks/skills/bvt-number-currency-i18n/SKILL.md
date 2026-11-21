@@ -1,6 +1,6 @@
 ---
 name: bvt-number-currency-i18n
-description: Formats numbers, token amounts and fiat currency correctly per locale in BitVault apps, covering the Intl API, Hermes gaps on React Native, Indian lakh and crore grouping, native digit systems and bigint token amounts. Use when displaying any balance, price, fee, percentage or fiat value.
+description: Formats numbers, token amounts and fiat currency correctly per locale in crypto apps, covering the Intl API, Hermes gaps on React Native, Indian lakh and crore grouping, native digit systems and bigint token amounts. Use when displaying any balance, price, fee, percentage or fiat value.
 ---
 
 # Numbers & Currency Localization
@@ -40,12 +40,12 @@ display(new Intl.NumberFormat(locale, { maximumFractionDigits: 8 }).format(Numbe
 ```
 - Convert to a float **only at the final display step**, never for storage, comparison or arithmetic.
 - For very large or very precise values, format the decimal string manually against the locale's separators rather than round-tripping through `Number`.
-- **Never abbreviate on a confirmation screen.** "1.2M BVT" is a bug where the user is authorizing a transfer.
+- **Never abbreviate on a confirmation screen.** "1.2M USDT" is a bug where the user is authorizing a transfer.
 
 ## Currency vs token
-`style: 'currency'` is for **fiat** (INR, USD). Token amounts are formatted as decimals with the ticker appended as a literal — `Intl` has no currency code for BVT, and forcing one produces nonsense.
+`style: 'currency'` is for **fiat** (INR, USD). Token amounts are formatted as decimals with the ticker appended as a literal — `Intl` has no currency code for tokens like USDT or ETH, and forcing one produces nonsense.
 
-**BRINR displays in ₹ and BRUSD in $ regardless of the user's locale.** The token defines the unit; the locale defines the separators. Never swap the symbol based on device region.
+**A rupee-pegged stablecoin displays in ₹ and a dollar-pegged one in $, regardless of the user's locale.** The token defines the unit; the locale defines the separators. Never swap the symbol based on device region.
 
 ## Percentages and prices
 Use `style: 'percent'` with explicit fraction digits. Price precision comes from the market's tick size, not from the locale.

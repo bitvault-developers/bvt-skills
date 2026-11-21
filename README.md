@@ -85,6 +85,7 @@ or copy a folder from `plugins/<plugin>/skills/` into your agent's skills folder
 
 ## Good to know
 
+- **Made for everyone.** Every skill is free and public under the MIT license. The playbooks started as the BitVault team's own rules and were rewritten to be generic: swap the example tokens, chains and app names for your own.
 - **Nothing runs by itself.** The scripts in bvt-multi-language run only when you or Claude run them, and every paid translation run prints a cost estimate and waits for a yes.
 - **Your keys stay yours.** Translation API keys are read from environment variables, never written into code or files.
 - **Guidance, not a guarantee.** The architecture, app and chain playbooks are engineering guidance. They are not a security audit and not legal advice: have a real exchange or wallet audited, and check the law in every country you serve.

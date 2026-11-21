@@ -1,9 +1,9 @@
 ---
 name: bvt-ts-conventions
-description: Writes TypeScript to BitVault conventions across the monorepo — strict compiler settings, explicit error handling over thrown exceptions in core, branded types for addresses and amounts, and integer-only money handling. Use when adding types, designing function signatures, handling errors, or reviewing TypeScript in any BitVault package or app shell.
+description: Writes TypeScript to strict, crypto-safe conventions across the monorepo — strict compiler settings, explicit error handling over thrown exceptions in core, branded types for addresses and amounts, and integer-only money handling. Use when adding types, designing function signatures, handling errors, or reviewing TypeScript in any package or app shell.
 ---
 
-# BitVault TypeScript Conventions
+# TypeScript Conventions
 
 ## Compiler (non-negotiable in `packages/config/tsconfig.base.json`)
 `strict: true` · `noUncheckedIndexedAccess: true` · `exactOptionalPropertyTypes: true` · `noImplicitOverride: true` · `verbatimModuleSyntax: true`.

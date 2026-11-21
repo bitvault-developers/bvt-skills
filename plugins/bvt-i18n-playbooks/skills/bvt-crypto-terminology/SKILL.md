@@ -1,16 +1,16 @@
 ---
 name: bvt-crypto-terminology
-description: Maintains BitVault's translation glossary and do not translate list for crypto terminology across all supported languages. Use when preparing strings for translation, configuring a term base in a translation management system, reviewing translated crypto copy, or deciding whether a term should be localized at all.
+description: Maintains your translation glossary and do not translate list for crypto terminology across all supported languages. Use when preparing strings for translation, configuring a term base in a translation management system, reviewing translated crypto copy, or deciding whether a term should be localized at all.
 ---
 
 # Crypto Terminology & Glossary
 
 ## Never translate (do-not-translate list)
-Ticker symbols: **BVT, BRUSD, BRINR, BVTW**, and every wrapped ticker (`BVDAI`, `BVUSDS`, …). Note the factory prepends `BV` — the ticker is an identifier, not a word.
+Ticker symbols: your own tokens and every listed or wrapped ticker (`BTC`, `ETH`, `USDT`, `WBTC`, `WETH`, …). A ticker is an identifier, not a word, even when a token factory adds a prefix.
 
 Also literal, in every language:
-- addresses, transaction hashes, block hashes, chain ids (`31338`), derivation paths (`m/44'/60'/0'/0`)
-- product names: BitVault, BVM20, BVTEx, BVTWallet, BVTMiner, BVTBank
+- addresses, transaction hashes, block hashes, chain ids (`1`, `56`, `137`), derivation paths (`m/44'/60'/0'/0`)
+- product and brand names: your company, app, token and network names, plus third-party ones (MetaMask, WalletConnect, Ethereum)
 - units and standards: wei, gwei, ERC-20, BIP-39, BIP-32, TOTP, QR
 - protocol words used as identifiers in the UI: `nonce`, `gas`, `mempool` where they name a field the user must match against a block explorer
 

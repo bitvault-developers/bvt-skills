@@ -1,6 +1,6 @@
 ---
 name: bvt-pwa-shell
-description: Maintains the BitVault web and progressive web app shell including the service worker, offline behaviour, install prompts and browser storage limits. Use when working on the web build's caching strategy, offline pages, install experience, or when browser storage or web crypto constraints affect wallet behaviour.
+description: Maintains a crypto app's web and progressive web app shell including the service worker, offline behaviour, install prompts and browser storage limits. Use when working on the web build's caching strategy, offline pages, install experience, or when browser storage or web crypto constraints affect wallet behaviour.
 ---
 
 # Web / PWA Shell

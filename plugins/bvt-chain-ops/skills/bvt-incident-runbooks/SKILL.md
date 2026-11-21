@@ -1,9 +1,9 @@
 ---
 name: bvt-incident-runbooks
-description: Responds to BitVault production incidents. Use when the chain halts or stops sealing, the public RPC returns errors, a tunnel drops, a wallet or exchange withdrawal path fails, funds move unexpectedly, or a key is suspected compromised. Provides triage order, diagnostic commands, containment steps and a postmortem template.
+description: Responds to production incidents on a blockchain project. Use when the chain halts or stops sealing, the public RPC returns errors, a tunnel drops, a wallet or exchange withdrawal path fails, funds move unexpectedly, or a key is suspected compromised. Provides triage order, diagnostic commands, containment steps and a postmortem template.
 ---
 
-# BitVault Incident Runbooks
+# Incident Runbooks
 
 ## Universal triage order
 1. **Contain** — halt what can still cause loss (withdrawals, bridge, minting) before diagnosing.

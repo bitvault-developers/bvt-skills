@@ -1,6 +1,6 @@
 ---
 name: bvt-seed-phrase-i18n
-description: Governs language handling for BIP-39 seed phrases in BitVault wallets. Use when implementing wallet creation, mnemonic generation, seed import or recovery in a localized app, or when anyone proposes offering the recovery phrase in a language other than English.
+description: Governs language handling for BIP-39 seed phrases in crypto wallets. Use when implementing wallet creation, mnemonic generation, seed import or recovery in a localized app, or when anyone proposes offering the recovery phrase in a language other than English.
 ---
 
 # Seed Phrase Localization — the hard rule
@@ -22,7 +22,7 @@ Worse: multi-language implementations that accept mixed input can silently deriv
 
 ## Import
 - Validate against the **English wordlist only**.
-- If a submitted word matches a non-English BIP-39 wordlist, do not "helpfully" accept it. Show a specific message: this phrase was created in another language and BitVault supports English recovery phrases only. Do not attempt a conversion.
+- If a submitted word matches a non-English BIP-39 wordlist, do not "helpfully" accept it. Show a specific message: this phrase was created in another language and this app supports English recovery phrases only. Do not attempt a conversion.
 - Normalise input (trim, collapse whitespace, lowercase, NFKD) before validation, but never transliterate.
 
 ## Rendering in RTL locales

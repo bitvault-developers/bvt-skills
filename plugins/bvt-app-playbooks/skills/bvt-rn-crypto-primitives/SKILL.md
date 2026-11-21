@@ -1,6 +1,6 @@
 ---
 name: bvt-rn-crypto-primitives
-description: Generates and reviews cryptographic key code for BitVault React Native and shared-core apps, covering secp256k1 signing, BIP-39 mnemonics, BIP-32 and BIP-44 derivation, entropy sources and key material hygiene. Use whenever code touches private keys, seed phrases, mnemonic generation, transaction signing, randomness, or crypto.getRandomValues.
+description: Generates and reviews cryptographic key code for React Native and shared-core crypto apps, covering secp256k1 signing, BIP-39 mnemonics, BIP-32 and BIP-44 derivation, entropy sources and key material hygiene. Use whenever code touches private keys, seed phrases, mnemonic generation, transaction signing, randomness, or crypto.getRandomValues.
 ---
 
 # Crypto Primitives (React Native / shared core)
@@ -28,7 +28,7 @@ Note: noble signs deterministically (RFC 6979), so **signing** survives a broken
 - `ethers`/`viem` are fine for ABI encoding and RPC; prefer noble underneath for raw signing.
 
 ## Derivation
-`m/44'/60'/0'/0/i` for EVM accounts on BVM L2. Store the **index**, never the derived key.
+`m/44'/60'/0'/0/i` for EVM accounts. Store the **index**, never the derived key.
 Validate the path shape before deriving; reject anything not matching the expected pattern.
 
 ## Mnemonics

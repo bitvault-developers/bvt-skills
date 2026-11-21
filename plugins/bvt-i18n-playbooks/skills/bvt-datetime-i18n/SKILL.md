@@ -1,6 +1,6 @@
 ---
 name: bvt-datetime-i18n
-description: Formats dates, times and relative times per locale in BitVault apps, covering time zones, exchange timestamps, candle labels and calendar systems. Use when displaying a transaction time, order history, chart axis, staking period or any time based value.
+description: Formats dates, times and relative times per locale in crypto apps, covering time zones, exchange timestamps, candle labels and calendar systems. Use when displaying a transaction time, order history, chart axis, staking period or any time based value.
 ---
 
 # Date & Time Localization

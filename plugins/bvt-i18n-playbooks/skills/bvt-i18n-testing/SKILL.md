@@ -1,6 +1,6 @@
 ---
 name: bvt-i18n-testing
-description: Tests BitVault localization including pseudolocalization, per locale screenshots, missing and hardcoded string detection, right to left smoke tests and on device formatting checks. Use when adding a language, before a release that touches user facing text, or when setting up localization checks in continuous integration.
+description: Tests app localization including pseudolocalization, per locale screenshots, missing and hardcoded string detection, right to left smoke tests and on device formatting checks. Use when adding a language, before a release that touches user facing text, or when setting up localization checks in continuous integration.
 ---
 
 # Localization Testing

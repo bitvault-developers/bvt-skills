@@ -1,9 +1,9 @@
 ---
 name: bvt-exchange-client-ui
-description: Builds the BVTEx exchange client interface including real time order book rendering, websocket reconnection with sequence gap recovery, order entry, and application background and foreground handling. Use for order book, trade feed, depth, order ticket or any live market data code in the mobile, desktop or web client.
+description: Builds a crypto exchange client interface including real time order book rendering, websocket reconnection with sequence gap recovery, order entry, and application background and foreground handling. Use for order book, trade feed, depth, order ticket or any live market data code in the mobile, desktop or web client.
 ---
 
-# Exchange Client UI (BVTEx)
+# Exchange Client UI
 
 ## Order book rendering
 - Fixed row count (e.g. 20 levels a side); **never render an unbounded book.** Aggregate the tail.

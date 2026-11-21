@@ -1,6 +1,6 @@
 ---
 name: bvt-shared-core-monorepo
-description: Enforces BitVault's shared-core monorepo architecture using pnpm workspaces and Turborepo, with packages for crypto, RPC and business logic and thin per-platform app shells. Use when creating or moving files between packages, adding dependencies, wiring imports across web, mobile, desktop or extension, or reviewing code for platform leakage.
+description: Enforces your shared-core monorepo architecture using pnpm workspaces and Turborepo, with packages for crypto, RPC and business logic and thin per-platform app shells. Use when creating or moving files between packages, adding dependencies, wiring imports across web, mobile, desktop or extension, or reviewing code for platform leakage.
 ---
 
 # Shared-Core Monorepo
@@ -14,14 +14,14 @@ apps/
   wallet-extension/  MV3 shell
 packages/
   core/       crypto, keys, BIP-39/32/44, signing      -- pure TS
-  rpc/        L1 + BVM L2 clients, token registry      -- pure TS
+  rpc/        L1 + L2 chain clients, token registry      -- pure TS
   business/   subscription, bridge, stablecoin logic   -- pure TS
   ui/         shared components (react-native-web)
   config/     eslint / tsconfig / design tokens
 ```
 
 ## Tooling
-**pnpm workspaces** (strict resolution surfaces phantom dependencies) + **Turborepo** (task graph and caching) + TypeScript project references. Internal deps use the workspace protocol: `"@bitvault/core": "workspace:*"`.
+**pnpm workspaces** (strict resolution surfaces phantom dependencies) + **Turborepo** (task graph and caching) + TypeScript project references. Internal deps use the workspace protocol: `"@yourapp/core": "workspace:*"`.
 
 Metro supports monorepos but needs `watchFolders` pointed at the repo root and `nodeModulesPaths` covering both the app and the root — the classic "module not found in the monorepo but fine standalone" failure.
 

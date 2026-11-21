@@ -1,32 +1,30 @@
 ---
 name: bvt-branding-and-docs
-description: Applies BitVault naming, attribution and documentation conventions to any external deliverable. Use when writing a whitepaper, documentation page, listing application, announcement or investor material. Encodes the canonical domain, token identities, removed and renamed tokens that must never be referenced, and the external attribution convention.
+description: Applies naming, attribution and documentation conventions to any external deliverable of a crypto project. Use when writing a whitepaper, documentation page, listing application, announcement or investor material. Covers canonical facts, token identities, retired names that must never be referenced, attribution, document structure and claims discipline.
 ---
 
-# BitVault Branding & Documentation Conventions
+# Branding & Documentation Conventions
 
-## Canonical facts
-- Domain is **bitvault.club**. Never `.io`, never any other TLD.
-- Tokens: **BVT** (utility/reward, blue) · **BRUSD** (USD-backed stablecoin, silver) · **BRINR** (INR-tracking stablecoin, green).
-- **BVTW** is wrapped-BVT bridge plumbing — **not a fourth token**. Never present it as one.
-- **BVLT / BVLN** is a payment-protocol *layer name only*. **Never deploy it as a token or a contract**, and never describe it as an asset.
+## Canonical facts (fill in once, then never vary them)
+Keep a short facts block for the project and copy it, word for word, into every deliverable:
+- **Domain** — the one official domain. Never mention look-alike or old domains.
+- **Tokens** — each token's ticker, role (utility, reward, stablecoin, governance) and identity colour.
+- **Plumbing is not a token** — wrapped or bridge representations (for example a `W`-prefixed bridge token) are infrastructure. Never present them as an extra asset.
+- **Protocol or layer names are not assets** — never deploy a layer name as a token or describe it as one.
 
 ## Never reference
-- **USDV** — permanently merged into BRUSD.
-- **BVTC** — removed. **BRV** was its former name. Neither appears in new material.
-
-If either appears in an old document being revised, remove it rather than annotating it.
+Keep a list of retired, merged or renamed tokens and products. None of them appears in new material. If one appears in an old document being revised, remove it rather than annotating it.
 
 ## Attribution
-External deliverables carry the project pseudonym and role designations — never a personal legal name. Apply this consistently across whitepapers, repositories, listing applications, announcements and support channels.
+External deliverables carry the project or team name and role designations consistently across whitepapers, repositories, listing applications, announcements and support channels. If the team uses a pseudonym, use it everywhere.
 
 ## Whitepaper / docs structure
 1. Problem and positioning
-2. Architecture — L1 (PoW, multi-algo), BVM L2 (Clique PoA), the app suite
+2. Architecture — chain(s), layer 2, the app suite
 3. Token model — utility, supply identity, fixed cap, emission and burn
 4. Stablecoins — backing model, oracle, redemption
 5. Bridge and supply identity (custody-backed, WBTC-style)
-6. Governance — multisig + 48h timelock
+6. Governance — multisig + timelock
 7. Security posture — audits, key management, incident history
 8. Roadmap
 9. Risk factors and disclaimers

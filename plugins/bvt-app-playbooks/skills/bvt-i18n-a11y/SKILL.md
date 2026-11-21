@@ -1,6 +1,6 @@
 ---
 name: bvt-i18n-a11y
-description: Implements localization and accessibility for BitVault apps, covering Hindi and other Indian languages, number and currency formatting, screen reader support and dynamic type. Use when adding user facing strings, formatting balances or fiat amounts, adding screen reader labels, or supporting larger text sizes and higher contrast.
+description: Implements localization and accessibility for crypto apps, covering Hindi and other Indian languages, number and currency formatting, screen reader support and dynamic type. Use when adding user facing strings, formatting balances or fiat amounts, adding screen reader labels, or supporting larger text sizes and higher contrast.
 ---
 
 # Localization & Accessibility
@@ -15,8 +15,8 @@ description: Implements localization and accessibility for BitVault apps, coveri
 ## Numbers and money — the part that goes wrong
 - Balances format via `Intl.NumberFormat` with the token's decimals, **from a bigint**, never from a float.
 - **Indian digit grouping is not thousands-grouping.** ₹12,34,567 (lakh/crore), not ₹1,234,567. `Intl.NumberFormat('en-IN')` handles this — do not hand-roll a comma inserter.
-- BRINR displays as ₹-denominated; BRUSD as $-denominated. Never swap the symbol based on device locale — the token defines the unit, not the user's region.
-- Never abbreviate an amount on a confirmation screen. "1.2M BVT" on a send confirmation is a bug.
+- A rupee-pegged stablecoin displays as ₹-denominated; a dollar-pegged one as $-denominated. Never swap the symbol based on device locale — the token defines the unit, not the user's region.
+- Never abbreviate an amount on a confirmation screen. "1.2M USDT" on a send confirmation is a bug.
 
 ## Accessibility
 - Every interactive element: `accessibilityLabel`, `accessibilityRole`, and `accessibilityState` where it toggles.

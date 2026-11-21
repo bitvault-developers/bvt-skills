@@ -1,6 +1,6 @@
 ---
 name: bvt-app-observability
-description: Adds crash reporting, error tracking and privacy safe analytics to BitVault apps without leaking wallet addresses, balances or key material. Use when integrating an error reporter, adding logging or telemetry, debugging a production issue, or reviewing what data an app sends off device.
+description: Adds crash reporting, error tracking and privacy safe analytics to crypto apps without leaking wallet addresses, balances or key material. Use when integrating an error reporter, adding logging or telemetry, debugging a production issue, or reviewing what data an app sends off device.
 ---
 
 # App Observability (privacy-safe)

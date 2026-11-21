@@ -1,6 +1,6 @@
 ---
 name: bvt-mobile-threat-hardening
-description: Hardens BitVault mobile and desktop apps against device-level compromise. Use when adding root or jailbreak detection, integrity attestation, certificate pinning, anti-tampering or obfuscation, or when deciding how the app should behave on a device it does not trust.
+description: Hardens crypto mobile and desktop apps against device-level compromise. Use when adding root or jailbreak detection, integrity attestation, certificate pinning, anti-tampering or obfuscation, or when deciding how the app should behave on a device it does not trust.
 ---
 
 # Threat Hardening
@@ -11,7 +11,7 @@ description: Hardens BitVault mobile and desktop apps against device-level compr
 - Attestation gates **server-side privileges** (withdrawal endpoints, exchange API keys), not local wallet features. A non-custodial wallet that refuses to open on a rooted device just loses the user.
 
 ## Root / jailbreak detection
-Detect and **degrade, don't block**, for the non-custodial wallet: warn clearly, disable biometric-gated auto-unlock, and require the PIN each time. For custodial paths (BVTEx, BVTBank), a failed integrity check blocks the privileged action server-side.
+Detect and **degrade, don't block**, for the non-custodial wallet: warn clearly, disable biometric-gated auto-unlock, and require the PIN each time. For custodial paths (exchange, crypto bank), a failed integrity check blocks the privileged action server-side.
 
 Detection is a speed bump — every check is defeatable. Never rely on it as a security boundary; layer it.
 

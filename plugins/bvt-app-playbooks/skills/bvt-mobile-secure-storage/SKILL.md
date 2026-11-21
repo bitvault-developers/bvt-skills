@@ -1,6 +1,6 @@
 ---
 name: bvt-mobile-secure-storage
-description: Implements secure secret storage and hardware-backed key protection for BitVault across the iOS Secure Enclave and Keychain, the Android Keystore and StrongBox, and desktop operating system keystores. Use when storing or retrieving seeds, keys, PINs or session tokens, when adding biometric gating to storage, or when choosing between platform storage APIs.
+description: Implements secure secret storage and hardware-backed key protection for crypto apps across the iOS Secure Enclave and Keychain, the Android Keystore and StrongBox, and desktop operating system keystores. Use when storing or retrieving seeds, keys, PINs or session tokens, when adding biometric gating to storage, or when choosing between platform storage APIs.
 ---
 
 # Mobile & Desktop Secure Storage

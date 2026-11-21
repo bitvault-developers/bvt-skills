@@ -1,9 +1,9 @@
 ---
 name: bvt-solidity-standard
-description: Authors and reviews Solidity for the BitVault ecosystem using OpenZeppelin patterns. Use when writing or modifying contracts such as wrapped ERC-20s, the token factory, the BRUSD and BRINR stablecoins, oracle consumers or registries, or when enforcing access control, reentrancy guards, checks-effects-interactions, SafeERC20 usage, and the two-of-three multisig plus 48-hour timelock governance convention.
+description: Authors and reviews Solidity for a token ecosystem using OpenZeppelin patterns. Use when writing or modifying contracts such as wrapped ERC-20s, a token factory, stablecoins, oracle consumers or registries, or when enforcing access control, reentrancy guards, checks-effects-interactions, SafeERC20 usage, and a two-of-three multisig plus 48-hour timelock governance convention.
 ---
 
-# BitVault Solidity Standard
+# Solidity Standard
 
 ## Defaults
 - Solidity: pin an exact version, never a caret range, in production contracts.
@@ -32,4 +32,4 @@ Deliberate exceptions must be documented in the contract's NatSpec with the reas
 - [ ] Events cover every balance/authority change
 
 ## Naming and constants
-Token colours and identity are fixed: BVT (utility), BRUSD (USD-backed), BRINR (INR-tracking). BVTW is bridge plumbing, **not** a fourth token. USDV and BVTC are removed — never reference them in new code or docs.
+Token identity is fixed and documented: one name, ticker and role per token. Bridge or wrapper contracts are plumbing, **not** extra tokens. Retired or merged tokens are never referenced in new code or docs.

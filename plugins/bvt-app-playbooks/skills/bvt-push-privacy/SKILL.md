@@ -1,6 +1,6 @@
 ---
 name: bvt-push-privacy
-description: Implements transaction, price and order push notifications for BitVault without leaking wallet addresses or balances to the push infrastructure. Use when adding notifications for incoming transfers, price alerts or order fills, when designing the notification backend, or when handling notification payloads on device.
+description: Implements transaction, price and order push notifications for crypto apps without leaking wallet addresses or balances to the push infrastructure. Use when adding notifications for incoming transfers, price alerts or order fills, when designing the notification backend, or when handling notification payloads on device.
 ---
 
 # Push Notifications Without Leaking Addresses
@@ -12,7 +12,7 @@ A conventional push backend maps `device_token → wallet_address` and receives 
 1. **On-device watching (best privacy).** The app subscribes to chain events itself while foregrounded and uses local notifications. Costs: no background delivery guarantee, battery.
 2. **Blinded topics.** The device subscribes to a topic derived as `HMAC(server_salt_epoch, address)` truncated. The server publishes to topic hashes without a reverse mapping. Rotate the epoch periodically. Some correlation risk remains via subscription timing.
 3. **Silent push + local fetch.** Server sends a **contentless** wake-up; the device fetches details itself and raises the local notification. The server learns *that* something happened, not what — and the payload holds no address or amount.
-4. **Plain address→token mapping.** Only acceptable for the custodial products (BVTEx, BVTBank) where the server already knows the account. Never for the non-custodial wallet.
+4. **Plain address→token mapping.** Only acceptable for the custodial products (an exchange or a crypto bank) where the server already knows the account. Never for the non-custodial wallet.
 
 ## Payload rules
 - **Never** put an address, amount, balance, token symbol tied to an account, or transaction hash in a push payload.

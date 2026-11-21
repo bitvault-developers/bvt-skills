@@ -1,6 +1,6 @@
 ---
 name: bvt-ai-translation-qa
-description: Uses large language models to translate BitVault strings and reviews the output for quality, glossary adherence and safety before shipping. Use when machine translating a locale, evaluating translation quality, setting up automated localization quality checks, or deciding which content requires a human translator.
+description: Uses large language models to translate app strings and reviews the output for quality, glossary adherence and safety before shipping. Use when machine translating a locale, evaluating translation quality, setting up automated localization quality checks, or deciding which content requires a human translator.
 ---
 
 # AI Translation & QA

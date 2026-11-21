@@ -2,7 +2,7 @@
 """Find user-facing text that is still hard-coded instead of coming from a language file.
 
   python find_hardcoded.py src
-  python find_hardcoded.py src lib --ignore BitVault,BVT --strict      # exit 1 if anything is found (CI)
+  python find_hardcoded.py src lib --ignore YourBrand,TICKER --strict      # exit 1 if anything is found (CI)
   python find_hardcoded.py . --json > hardcoded.json
 
 Covers React/JSX/TSX, Vue, Svelte, Angular templates, HTML, PHP (WordPress), Flutter/Dart, Android XML and

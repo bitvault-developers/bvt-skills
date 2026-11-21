@@ -1,6 +1,6 @@
 ---
 name: bvt-charts-and-market-viz
-description: Implements charts and market data visualization for BitVault apps including candlestick charts, portfolio and sparkline views, and performant rendering on mobile. Use when adding a price chart, portfolio allocation view, historical performance graph, or any data visualization that updates in real time.
+description: Implements charts and market data visualization for crypto apps including candlestick charts, portfolio and sparkline views, and performant rendering on mobile. Use when adding a price chart, portfolio allocation view, historical performance graph, or any data visualization that updates in real time.
 ---
 
 # Charts & Market Visualization
@@ -30,7 +30,7 @@ Prices and volumes arrive as strings/bigints. Convert to float **only at the pix
 - Haptic tick on crosshair snap is a nice touch; make it respect reduce-motion/haptic settings.
 
 ## Portfolio views
-- Allocation by **value**, with a clearly labelled "other" bucket — a 909-token pie chart is unreadable.
+- Allocation by **value**, with a clearly labelled "other" bucket — a 900-token pie chart is unreadable.
 - Historical portfolio value needs a stated methodology (which price source, which timestamp) shown in the UI. An unexplained performance number in a wallet is a support ticket.
 - Never annualize or project a return. Show what happened, not what might.
 

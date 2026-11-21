@@ -1,9 +1,9 @@
 ---
 name: bvt-frontend-system
-description: Builds and maintains BitVault's single-file React applications. Use when editing the large single-file JSX builds, keeping the web, mobile and extension variants of an app in sync, adding a screen or component, or applying BitVault visual conventions including token colours and embedded transparent logo assets. Encodes what may safely diverge between build targets and what must not.
+description: Builds and maintains your single-file React applications. Use when editing the large single-file JSX builds, keeping the web, mobile and extension variants of an app in sync, adding a screen or component, or applying visual conventions including token colours and embedded transparent logo assets. Encodes what may safely diverge between build targets and what must not.
 ---
 
-# BitVault Frontend System
+# Frontend System
 
 ## Build targets
 Each app ships as parallel **single-file** builds kept in sync:
@@ -34,7 +34,7 @@ Each app ships as parallel **single-file** builds kept in sync:
 - Every new screen needs: its state declaration, its route/case entry, and its render branch. **A missing state declaration is the classic "screen won't open" bug** — check that first.
 
 ## Visual conventions
-- BVT blue, BRUSD silver, BRINR green.
+- Each token keeps one fixed identity colour across all builds.
 - Coin logos must be **transparent, background-removed**. Sources arrive as JPEG on white, so background removal runs every time — never ship the white box.
 - Embed logo assets in-file (data URIs) so a single file stays self-contained.
 

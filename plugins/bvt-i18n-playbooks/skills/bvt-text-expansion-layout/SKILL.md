@@ -1,6 +1,6 @@
 ---
 name: bvt-text-expansion-layout
-description: Designs BitVault interfaces that survive text expansion and script height differences across languages. Use when building a screen, setting a button width, choosing a truncation strategy, or fixing a layout that breaks in German, Hindi, Arabic or Japanese.
+description: Designs interfaces that survive text expansion and script height differences across languages. Use when building a screen, setting a button width, choosing a truncation strategy, or fixing a layout that breaks in German, Hindi, Arabic or Japanese.
 ---
 
 # Text Expansion & Layout

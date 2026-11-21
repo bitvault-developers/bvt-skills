@@ -1,6 +1,6 @@
 ---
 name: bvt-regulatory-translation
-description: Handles translation of BitVault legal, risk and regulatory content including white papers, disclosures and terms across jurisdictions. Use when translating a white paper, risk disclosure, terms of service or marketing communication for a regulated market, or when deciding whether content may be machine translated. This is engineering and process guidance, not legal advice.
+description: Handles translation of crypto legal, risk and regulatory content including white papers, disclosures and terms across jurisdictions. Use when translating a white paper, risk disclosure, terms of service or marketing communication for a regulated market, or when deciding whether content may be machine translated. This is engineering and process guidance, not legal advice.
 ---
 
 # Regulatory & Legal Translation

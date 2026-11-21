@@ -1,9 +1,9 @@
 ---
 name: bvtex-exchange-architecture
-description: Designs the BVTEx centralized crypto exchange. Use when planning or building spot trading, service boundaries, order lifecycle, account and sub-account models, fee tiers, listing workflow, or the overall data flow between matching engine, ledger, custody and market data. Start here before the component-specific exchange skills.
+description: Designs a centralized crypto exchange. Use when planning or building spot trading, service boundaries, order lifecycle, account and sub-account models, fee tiers, listing workflow, or the overall data flow between matching engine, ledger, custody and market data. Start here before designing any single component.
 ---
 
-# BVTEx Exchange Architecture
+# Crypto Exchange Architecture
 
 ## Component map
 ```

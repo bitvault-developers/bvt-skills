@@ -1,9 +1,9 @@
 ---
 name: bvt-edge-ops
-description: Exposes and troubleshoots BitVault public endpoints through cloudflared tunnels and nginx. Use when adding a hostname to a tunnel, creating DNS routes from the CLI, diagnosing 503 errors or dropped tunnel connections, setting CORS for browser wallets, managing TLS expiry, or deciding between tunnel access and direct localhost access from WSL2.
+description: Exposes and troubleshoots public endpoints (RPC, APIs, websites) through cloudflared tunnels and nginx. Use when adding a hostname to a tunnel, creating DNS routes from the CLI, diagnosing 503 errors or dropped tunnel connections, setting CORS for browser wallets, managing TLS expiry, or deciding between tunnel access and direct localhost access from WSL2.
 ---
 
-# BitVault Edge / Tunnel Operations
+# Edge / Tunnel Operations
 
 ## cloudflared: the failure mode and the fix
 Symptoms: `ERR Application error 0x0 (remote)`, `accept stream listener encountered a failure while serving`, `failed to run the datagram handler`, then `no more connections active and exiting`. Cloudflare returns 503 while the origin is healthy.
@@ -34,4 +34,4 @@ If the host is WSL2 on a Windows machine, the virtual NIC renegotiates on networ
 - Track TLS expiry explicitly; a tunnel cert expiring looks identical to a tunnel outage.
 
 ## Diagnosing "the site is broken"
-Both BitVault front-ends are JS SPAs, so **grepping `index.html` finds nothing** — search the built asset (`bundle.js` / `/assets/index-*.js`) instead. Also confirm which host actually serves the domain: a site on Cloudflare Pages never reaches the nginx vhost, so a stale local build can look live when it is not.
+If your front-ends are JS SPAs, **grepping `index.html` finds nothing** — search the built asset (`bundle.js` / `/assets/index-*.js`) instead. Also confirm which host actually serves the domain: a site on Cloudflare Pages never reaches the nginx vhost, so a stale local build can look live when it is not.

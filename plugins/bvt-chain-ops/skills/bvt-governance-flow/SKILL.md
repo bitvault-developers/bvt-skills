@@ -1,9 +1,9 @@
 ---
 name: bvt-governance-flow
-description: Executes changes through BitVault's two-of-three multisig and 48-hour AdminTimelock. Use when proposing, approving, queueing or executing any timelock-owned contract change, batching operations, computing approve calldata, or scripting a full propose-approve-execute run. The 48-hour delay is never shortened or routed around.
+description: Executes changes through a two-of-three multisig and a 48-hour timelock. Use when proposing, approving, queueing or executing any timelock-owned contract change, batching operations, computing approve calldata, or scripting a full propose-approve-execute run. The 48-hour delay is never shortened or routed around.
 ---
 
-# BitVault Governance Flow
+# Governance Flow
 
 ## The path
 ```

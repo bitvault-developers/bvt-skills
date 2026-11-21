@@ -1,6 +1,6 @@
 ---
 name: bvt-offline-sync
-description: Implements offline-first encrypted local data and chain state cache invalidation for BitVault apps using SQLite. Use when caching balances, token lists, transaction history or order data on device, when the app must work without connectivity, or when reconciling cached state against the layer one and BVM layer two chains.
+description: Implements offline-first encrypted local data and chain state cache invalidation for crypto apps using SQLite. Use when caching balances, token lists, transaction history or order data on device, when the app must work without connectivity, or when reconciling cached state against layer one and layer two chains.
 ---
 
 # Offline-First Data & Cache Invalidation
@@ -20,7 +20,7 @@ CREATE TABLE balances (
 );
 ```
 - **Amounts as TEXT** holding the decimal bigint. `REAL` silently destroys wei precision.
-- `chain_id` in every primary key — 31338 data must never bleed into another network's view.
+- `chain_id` in every primary key — one chain's data must never bleed into another network's view.
 - `block_hash` is what makes reorg handling possible.
 
 ## Invalidation against chain state

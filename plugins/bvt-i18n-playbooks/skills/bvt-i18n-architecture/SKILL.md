@@ -1,6 +1,6 @@
 ---
 name: bvt-i18n-architecture
-description: Sets up and maintains the internationalization architecture for BitVault apps across mobile, desktop, web and extension, covering library choice, catalog layout in the monorepo, namespaces, key naming, locale detection and fallback chains. Use when adding a language, restructuring translation files, wiring i18n into a new app shell, or deciding where a string lives.
+description: Sets up and maintains the internationalization architecture for crypto apps across mobile, desktop, web and extension, covering library choice, catalog layout in the monorepo, namespaces, key naming, locale detection and fallback chains. Use when adding a language, restructuring translation files, wiring i18n into a new app shell, or deciding where a string lives.
 ---
 
 # i18n Architecture

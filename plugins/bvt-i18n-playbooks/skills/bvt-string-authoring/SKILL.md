@@ -1,6 +1,6 @@
 ---
 name: bvt-string-authoring
-description: Writes source strings for BitVault that survive translation, covering context descriptions, length limits, avoiding concatenation and embedded markup, and the security copy that must not be softened. Use when adding user facing text to any screen, writing error messages, or reviewing English copy before it goes to translators.
+description: Writes source strings that survive translation, covering context descriptions, length limits, avoiding concatenation and embedded markup, and the security copy that must not be softened. Use when adding user facing text to any screen, writing error messages, or reviewing English copy before it goes to translators.
 ---
 
 # Source String Authoring
@@ -33,7 +33,7 @@ Error strings are the worst-translated part of most apps because they are writte
 ## Security copy that must not be softened by a translator
 Mark these as **locked / review-required** in the TMS:
 - the seed phrase is the wallet; anyone with it controls the funds
-- BitVault cannot recover it; there is no reset
+- [App name] cannot recover it; there is no reset
 - no support flow will ever ask for it
 - this transaction is irreversible
 

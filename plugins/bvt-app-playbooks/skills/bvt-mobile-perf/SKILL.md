@@ -1,17 +1,17 @@
 ---
 name: bvt-mobile-perf
-description: Optimizes BitVault mobile performance including virtualizing large token lists, coin logo image pipelines, startup time, JavaScript bundle size and animation smoothness. Use when rendering long lists such as the wrapped token registry, when addressing jank or slow cold start, or when reducing bundle size.
+description: Optimizes crypto mobile app performance including virtualizing large token lists, coin logo image pipelines, startup time, JavaScript bundle size and animation smoothness. Use when rendering long lists such as the wrapped token registry, when addressing jank or slow cold start, or when reducing bundle size.
 ---
 
 # Mobile Performance
 
-## Lists — the 909-token problem
+## Lists — the 900-token problem
 `FlatList` is not adequate at this size. Use **FlashList** (recycling, no blank cells while scrolling).
 - Set `estimatedItemSize` accurately; a wrong estimate defeats the recycler.
 - **Every row is `React.memo`'d** with a stable comparator. One unmemoized row re-renders the visible window on every parent state change.
 - Stable `keyExtractor` from the token address, never the array index.
 - No inline arrow props on rows — they break memoization every render.
-- Search/filter is debounced (~200ms) and runs over a prebuilt index, not a `filter()` over 909 objects per keystroke.
+- Search/filter is debounced (~200ms) and runs over a prebuilt index, not a `filter()` over hundreds of objects per keystroke.
 - Consider a section list keyed by rank so the common tokens are reachable without scrolling 900 rows.
 
 ## Images / coin logos

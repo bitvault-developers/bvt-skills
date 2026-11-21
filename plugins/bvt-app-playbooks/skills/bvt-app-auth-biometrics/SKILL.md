@@ -1,6 +1,6 @@
 ---
 name: bvt-app-auth-biometrics
-description: Implements app lock, biometric authentication and time-based one-time password two-factor for BitVault apps across mobile and desktop. Use when adding Face ID, Touch ID or fingerprint gating, PIN fallback, auto-lock timeouts, TOTP enrolment and verification, or deciding which actions require re-authentication.
+description: Implements app lock, biometric authentication and time-based one-time password two-factor for crypto apps across mobile and desktop. Use when adding Face ID, Touch ID or fingerprint gating, PIN fallback, auto-lock timeouts, TOTP enrolment and verification, or deciding which actions require re-authentication.
 ---
 
 # App Lock, Biometrics & TOTP
@@ -28,7 +28,7 @@ Default 5 minutes idle. Also lock on: app backgrounded past a short grace period
 
 ## TOTP (Google Authenticator compatible)
 RFC 6238 · 30s step · SHA-1 · 6 digits · **±1 step drift window** (accept previous, current, next).
-- Provision with an `otpauth://totp/BitVault:<label>?secret=...&issuer=BitVault` URI plus QR.
+- Provision with an `otpauth://totp/<AppName>:<label>?secret=...&issuer=<AppName>` URI plus QR.
 - Show the secret in plaintext as a manual-entry fallback.
 - **Generate recovery codes at enrolment**, require the user to acknowledge them, and store them hashed.
 - Store the TOTP secret in secure storage, encrypted, same as any other secret.

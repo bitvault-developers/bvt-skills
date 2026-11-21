@@ -1,6 +1,6 @@
 ---
 name: bvt-desktop-signing-updates
-description: Handles desktop code signing, notarization and auto update for BitVault on Windows, macOS and Linux. Use when preparing a desktop release, configuring the Tauri or Electron updater, obtaining or rotating signing certificates, or diagnosing an unsigned or blocked installer.
+description: Handles desktop code signing, notarization and auto update for desktop apps on Windows, macOS and Linux. Use when preparing a desktop release, configuring the Tauri or Electron updater, obtaining or rotating signing certificates, or diagnosing an unsigned or blocked installer.
 ---
 
 # Desktop Signing & Auto-Update

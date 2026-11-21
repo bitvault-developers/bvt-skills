@@ -1,9 +1,9 @@
 ---
 name: bvt-l1-pow-ops
-description: Operates the BitVault proof-of-work L1, a DigiByte and Bitcoin-derived chain with multi-algorithm consensus. Use when configuring chainparams, per-algorithm difficulty retargeting, block reward and halving schedules, seed nodes and DNS seeders, wallet RPC, UTXO handling, or building and deploying the node daemon. Covers fork maintenance when rebasing on upstream Bitcoin Core.
+description: Operates a proof-of-work L1 forked from Bitcoin or DigiByte, including multi-algorithm consensus. Use when configuring chainparams, per-algorithm difficulty retargeting, block reward and halving schedules, seed nodes and DNS seeders, wallet RPC, UTXO handling, or building and deploying the node daemon. Covers fork maintenance when rebasing on upstream Bitcoin Core.
 ---
 
-# BitVault L1 (PoW, multi-algo) Operations
+# L1 (PoW, multi-algo) Operations
 
 ## Chainparams checklist
 When forking or changing params, every one of these must be deliberate and consistent across mainnet/testnet/regtest:

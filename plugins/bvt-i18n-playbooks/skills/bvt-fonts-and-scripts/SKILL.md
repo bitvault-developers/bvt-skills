@@ -1,6 +1,6 @@
 ---
 name: bvt-fonts-and-scripts
-description: Selects, loads and tests fonts for the scripts BitVault supports including Devanagari, Arabic, and CJK, covering complex script shaping, fallback chains, bundle size and tabular figures. Use when adding a language whose script the current font does not cover, fixing missing or broken glyphs, or reducing font payload.
+description: Selects, loads and tests fonts for the scripts an app supports including Devanagari, Arabic, and CJK, covering complex script shaping, fallback chains, bundle size and tabular figures. Use when adding a language whose script the current font does not cover, fixing missing or broken glyphs, or reducing font payload.
 ---
 
 # Fonts & Complex Scripts

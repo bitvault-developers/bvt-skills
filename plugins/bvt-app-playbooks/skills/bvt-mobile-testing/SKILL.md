@@ -1,6 +1,6 @@
 ---
 name: bvt-mobile-testing
-description: Writes and runs tests for BitVault mobile apps including end to end user journeys, crypto flow tests against testnets, and device coverage. Use when adding end to end tests, testing send, receive, signing or import flows, setting up test automation in continuous integration, or deciding what to test on real devices.
+description: Writes and runs tests for crypto mobile apps including end to end user journeys, crypto flow tests against testnets, and device coverage. Use when adding end to end tests, testing send, receive, signing or import flows, setting up test automation in continuous integration, or deciding what to test on real devices.
 ---
 
 # Mobile Testing
@@ -18,7 +18,7 @@ description: Writes and runs tests for BitVault mobile apps including end to end
 ## The rule that matters
 **Never use real funds, mainnet keys, or a production seed in a test.** Not "a small amount". Tests run in CI logs, on shared devices, and in artifacts.
 - Fixed, publicly-known test mnemonics from the BIP-39 vectors.
-- A dedicated testnet / local BVM node, funded from a faucet.
+- A dedicated testnet / local EVM node, funded from a faucet.
 - Crypto correctness is proven by **official test vectors**, not by moving value.
 
 ## What must have a test before shipping
@@ -27,7 +27,7 @@ description: Writes and runs tests for BitVault mobile apps including end to end
 - Send flow: build → simulate → sign → broadcast, against a local node.
 - Lock/unlock: after lock, key material is unreadable and cache is cleared.
 - Reorg: cached confirmed tx reverts to pending.
-- Large list: 909-token list scrolls and filters without dropped frames (perf assertion, not just render).
+- Large list: list of 900+ tokens scrolls and filters without dropped frames (perf assertion, not just render).
 
 ## Device coverage
 Test the release build on: one low-end Android (2–3GB RAM, the realistic Indian-market device), one current Android, one older iPhone, one current iPhone. Simulators do not have a Secure Enclave and will not catch keystore failures — **any secure-storage test must run on physical hardware.**

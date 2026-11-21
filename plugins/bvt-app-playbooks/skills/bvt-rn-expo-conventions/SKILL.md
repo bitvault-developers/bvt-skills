@@ -1,6 +1,6 @@
 ---
 name: bvt-rn-expo-conventions
-description: Writes React Native and Expo code to BitVault conventions covering the New Architecture, Expo Router navigation, EAS Build, Submit and Update, config plugins and native module boundaries. Use for any Expo or React Native app shell code, navigation structure, native dependency choices, or build profile configuration.
+description: Writes React Native and Expo code to strict, crypto-safe conventions covering the New Architecture, Expo Router navigation, EAS Build, Submit and Update, config plugins and native module boundaries. Use for any Expo or React Native app shell code, navigation structure, native dependency choices, or build profile configuration.
 ---
 
 # React Native + Expo Conventions

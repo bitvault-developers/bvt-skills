@@ -1,6 +1,6 @@
 ---
 name: bvt-ci-mobile-no-mac
-description: Builds, signs and ships BitVault iOS and Android applications from a Linux or Windows Subsystem for Linux machine with no Mac, using cloud build services. Use when setting up mobile continuous integration, configuring build credentials, submitting to the stores from a Linux box, or estimating build costs.
+description: Builds, signs and ships iOS and Android apps from a Linux or Windows Subsystem for Linux machine with no Mac, using cloud build services. Use when setting up mobile continuous integration, configuring build credentials, submitting to the stores from a Linux box, or estimating build costs.
 ---
 
 # Mobile CI Without a Mac

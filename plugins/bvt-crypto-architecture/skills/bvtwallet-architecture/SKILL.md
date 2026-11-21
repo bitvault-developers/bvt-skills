@@ -1,9 +1,9 @@
 ---
 name: bvtwallet-architecture
-description: Builds BVTWallet features across its web, mobile and extension builds. Use for seed phrase generation and twelve word import, key derivation, keystore encryption, time-based one-time password two-factor setup, transaction construction and broadcast, token list rendering, and the secure storage differences between platforms. A decrypted seed must never persist in extension service worker state.
+description: Builds self-custody wallet features across web, mobile and browser extension builds. Use for seed phrase generation and twelve word import, key derivation, keystore encryption, time-based one-time password two-factor setup, transaction construction and broadcast, token list rendering, and the secure storage differences between platforms. A decrypted seed must never persist in extension service worker state.
 ---
 
-# BVTWallet Architecture
+# Self-Custody Wallet Architecture
 
 ## Seed and derivation
 - BIP-39 mnemonic, 12 words (128-bit entropy). Entropy from `crypto.getRandomValues` only — never `Math.random`.

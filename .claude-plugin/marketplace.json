@@ -1,0 +1,28 @@
+{
+  "name": "bvt-skills",
+  "description": "Free Claude skills and plugins from the BitVault team: multilingual apps, token saving, and crypto exchange and wallet architecture.",
+  "owner": {
+    "name": "BitVault Founding Team",
+    "url": "https://bitvault.club"
+  },
+  "plugins": [
+    {
+      "name": "bvt-multi-language",
+      "source": "./plugins/bvt-multi-language",
+      "description": "Language switcher and full multilingual system for any website or app, translation into as many languages as possible, and a quality gate before release.",
+      "category": "development"
+    },
+    {
+      "name": "bvt-save-token",
+      "source": "./plugins/bvt-save-token",
+      "description": "Use fewer tokens: short replies, diff-only code, chat handoff notes and a setup audit.",
+      "category": "productivity"
+    },
+    {
+      "name": "bvt-crypto-architecture",
+      "source": "./plugins/bvt-crypto-architecture",
+      "description": "Architecture playbooks for a centralized crypto exchange and a self-custody wallet.",
+      "category": "development"
+    }
+  ]
+}

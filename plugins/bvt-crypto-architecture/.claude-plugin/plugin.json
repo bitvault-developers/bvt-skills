@@ -1,0 +1,20 @@
+{
+  "name": "bvt-crypto-architecture",
+  "version": "1.0.0",
+  "description": "Architecture playbooks for a centralized crypto exchange (ledger-first, single-writer matching engine) and a self-custody wallet (seed, storage, 2FA, send flow) across web, mobile and browser extension.",
+  "keywords": [
+    "crypto",
+    "exchange",
+    "wallet",
+    "ledger",
+    "bip39",
+    "security"
+  ],
+  "author": {
+    "name": "BitVault Founding Team",
+    "url": "https://bitvault.club"
+  },
+  "homepage": "https://github.com/bitvault-developers/bvt-skills",
+  "repository": "https://github.com/bitvault-developers/bvt-skills",
+  "license": "MIT"
+}

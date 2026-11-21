@@ -1,0 +1,18 @@
+[
+  {"code":"en","english":"English","native":"English","script":"Latn","dir":"ltr","plurals":["one","other"],"tier":"A","fallback":null},
+  {"code":"es","english":"Spanish","native":"Español","script":"Latn","dir":"ltr","plurals":["one","many","other"],"tier":"B","fallback":"en"},
+  {"code":"fr","english":"French","native":"Français","script":"Latn","dir":"ltr","plurals":["one","many","other"],"tier":"B","fallback":"en"},
+  {"code":"de","english":"German","native":"Deutsch","script":"Latn","dir":"ltr","plurals":["one","other"],"tier":"B","fallback":"en"},
+  {"code":"pt-BR","english":"Brazilian Portuguese","native":"Português (Brasil)","script":"Latn","dir":"ltr","plurals":["one","many","other"],"tier":"C","fallback":"pt"},
+  {"code":"hi","english":"Hindi","native":"हिन्दी","script":"Deva","dir":"ltr","plurals":["one","other"],"tier":"B","fallback":"en"},
+  {"code":"bn","english":"Bangla","native":"বাংলা","script":"Beng","dir":"ltr","plurals":["one","other"],"tier":"C","fallback":"en"},
+  {"code":"ta","english":"Tamil","native":"தமிழ்","script":"Taml","dir":"ltr","plurals":["one","other"],"tier":"C","fallback":"en"},
+  {"code":"ar","english":"Arabic","native":"العربية","script":"Arab","dir":"rtl","plurals":["zero","one","two","few","many","other"],"tier":"C","fallback":"en"},
+  {"code":"ur","english":"Urdu","native":"اردو","script":"Arab","dir":"rtl","plurals":["one","other"],"tier":"C","fallback":"en"},
+  {"code":"ru","english":"Russian","native":"Русский","script":"Cyrl","dir":"ltr","plurals":["one","few","many","other"],"tier":"C","fallback":"en"},
+  {"code":"ja","english":"Japanese","native":"日本語","script":"Jpan","dir":"ltr","plurals":["other"],"tier":"C","fallback":"en"},
+  {"code":"ko","english":"Korean","native":"한국어","script":"Kore","dir":"ltr","plurals":["other"],"tier":"C","fallback":"en"},
+  {"code":"zh-Hans","english":"Simplified Chinese","native":"简体中文","script":"Hans","dir":"ltr","plurals":["other"],"tier":"C","fallback":"zh"},
+  {"code":"id","english":"Indonesian","native":"Indonesia","script":"Latn","dir":"ltr","plurals":["other"],"tier":"C","fallback":"en"},
+  {"code":"tr","english":"Turkish","native":"Türkçe","script":"Latn","dir":"ltr","plurals":["one","other"],"tier":"C","fallback":"en"}
+]

@@ -20,3 +20,15 @@ First public release.
 
 - `bvtex-exchange-architecture`: ledger first, single-writer matching engine, safe build order.
 - `bvtwallet-architecture`: seed phrase, encrypted storage, 2FA and send flow for web, mobile and browser extensions.
+
+### bvt-i18n-playbooks 1.0.0
+
+- 15 localization skills: architecture, ICU message format, string authoring, text expansion, RTL, fonts and scripts, number and currency, date and time, crypto terminology, seed phrase language rules, store listings, regulatory translation, translation pipeline, AI translation QA and testing.
+
+### bvt-app-playbooks 1.0.0
+
+- 29 app engineering skills for crypto wallet and exchange apps across mobile, desktop, web and browser extension.
+
+### bvt-chain-ops 1.0.0
+
+- 6 skills: Solidity standard, governance flow, PoW L1 operations, edge operations, incident runbooks, branding and docs.

@@ -1,6 +1,6 @@
 {
   "name": "bvt-skills",
-  "description": "Free Claude skills and plugins from the BitVault team: multilingual apps, token saving, and crypto exchange and wallet architecture.",
+  "description": "Free Claude skills and plugins from the BitVault team: multilingual apps, token saving, crypto exchange and wallet architecture, and 50 engineering playbooks for localization, crypto apps and chain operations.",
   "owner": {
     "name": "BitVault Founding Team",
     "url": "https://bitvault.club"
@@ -22,6 +22,24 @@
       "name": "bvt-crypto-architecture",
       "source": "./plugins/bvt-crypto-architecture",
       "description": "Architecture playbooks for a centralized crypto exchange and a self-custody wallet.",
+      "category": "development"
+    },
+    {
+      "name": "bvt-i18n-playbooks",
+      "source": "./plugins/bvt-i18n-playbooks",
+      "description": "15 localization playbooks for crypto apps: i18n architecture, ICU messages, RTL, fonts, number, currency and date formats, seed phrase language rules, store listings, regulatory translation, AI translation QA and testing.",
+      "category": "development"
+    },
+    {
+      "name": "bvt-app-playbooks",
+      "source": "./plugins/bvt-app-playbooks",
+      "description": "29 engineering playbooks for crypto wallet and exchange apps on mobile, desktop, web and browser extension: secure storage, biometrics, seed phrase UX, RPC resilience, React Native and Expo, Tauri, PWA, testing, store release and more.",
+      "category": "development"
+    },
+    {
+      "name": "bvt-chain-ops",
+      "source": "./plugins/bvt-chain-ops",
+      "description": "6 blockchain operations playbooks: Solidity standard with OpenZeppelin, multisig plus timelock governance, PoW multi-algorithm L1 operations, cloudflared and nginx edge ops, incident runbooks and project documentation rules.",
       "category": "development"
     }
   ]

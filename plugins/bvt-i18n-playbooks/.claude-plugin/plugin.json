@@ -1,0 +1,20 @@
+{
+  "name": "bvt-i18n-playbooks",
+  "version": "1.0.0",
+  "description": "15 localization playbooks for crypto apps: i18n architecture, ICU messages, RTL, fonts, number, currency and date formats, seed phrase language rules, store listings, regulatory translation, AI translation QA and testing.",
+  "keywords": [
+    "i18n",
+    "localization",
+    "translation",
+    "rtl",
+    "icu",
+    "crypto"
+  ],
+  "author": {
+    "name": "BitVault Founding Team",
+    "url": "https://bitvault.club"
+  },
+  "homepage": "https://github.com/bitvault-developers/bvt-skills",
+  "repository": "https://github.com/bitvault-developers/bvt-skills",
+  "license": "MIT"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "bvt-chain-ops",
+  "version": "1.0.0",
+  "description": "6 blockchain operations playbooks: Solidity standard with OpenZeppelin, multisig plus timelock governance, PoW multi-algorithm L1 operations, cloudflared and nginx edge ops, incident runbooks and project documentation rules.",
+  "keywords": [
+    "solidity",
+    "blockchain",
+    "governance",
+    "multisig",
+    "devops",
+    "incident-response"
+  ],
+  "author": {
+    "name": "BitVault Founding Team",
+    "url": "https://bitvault.club"
+  },
+  "homepage": "https://github.com/bitvault-developers/bvt-skills",
+  "repository": "https://github.com/bitvault-developers/bvt-skills",
+  "license": "MIT"
+}

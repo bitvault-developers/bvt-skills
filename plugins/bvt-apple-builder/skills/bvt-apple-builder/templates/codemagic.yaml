@@ -1,0 +1,37 @@
+# Save as codemagic.yaml in the repo root.
+# Flutter app -> iPhone/iPad build -> TestFlight, on Codemagic's cloud Macs.
+# Replace: REPLACE_INTEGRATION_NAME (the name given to the API key in Codemagic > Teams > Integrations),
+#          REPLACE_BUNDLE_ID, REPLACE_ASC_APP_ID.
+# Check Codemagic's machine-type page for the current instance_type names.
+workflows:
+  ios-testflight:
+    name: iOS TestFlight
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: REPLACE_INTEGRATION_NAME
+    environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: REPLACE_BUNDLE_ID
+      vars:
+        APP_STORE_APPLE_ID: REPLACE_ASC_APP_ID
+      flutter: stable
+      xcode: latest
+    scripts:
+      - name: Set up code signing
+        script: xcode-project use-profiles
+      - name: Get Flutter packages
+        script: flutter pub get
+      - name: Build the app file (.ipa)
+        script: |
+          flutter build ipa --release \
+            --build-number=$(($(app-store-connect get-latest-testflight-build-number "$APP_STORE_APPLE_ID") + 1)) \
+            --export-options-plist=/Users/builder/export_options.plist
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true

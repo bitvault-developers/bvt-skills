@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Entitlements = the list of special permissions the app is signed with.
+  Save as Resources/App.entitlements. Start empty. Add a key only after the same
+  capability is ticked on the App ID in the developer portal (references/capabilities.md).
+-->
+<plist version="1.0">
+<dict>
+</dict>
+</plist>

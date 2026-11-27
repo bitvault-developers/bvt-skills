@@ -1,0 +1,21 @@
+{
+  "name": "bvt-smart-contracts",
+  "version": "1.0.0",
+  "description": "7 smart contract and wallet-connection playbooks: ethers v6, safe upgrades, EVM storage surgery, pre-audit checklist, dapp connectivity (EIP-6963, WalletConnect), MetaMask fixes and Manifest V3 extension limits.",
+  "keywords": [
+    "solidity",
+    "evm",
+    "ethers",
+    "smart-contracts",
+    "security",
+    "metamask",
+    "walletconnect"
+  ],
+  "author": {
+    "name": "BitVault Founding Team",
+    "url": "https://bitvault.club"
+  },
+  "homepage": "https://github.com/bitvault-developers/bvt-skills",
+  "repository": "https://github.com/bitvault-developers/bvt-skills",
+  "license": "MIT"
+}

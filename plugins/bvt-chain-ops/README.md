@@ -1,15 +1,18 @@
 # BVT Chain Ops
 
-Six operations skills for running a blockchain project: contracts, governance, the node, the public edge, incidents and docs.
+Nine operations skills for running a blockchain project: contracts, governance, PoW and Besu Clique nodes, chain relaunches, the public edge, incidents, repo hygiene and docs.
 
 | Skill | What it covers |
 |---|---|
+| `besu-clique-ops` | Operates Hyperledger Besu nodes running Clique proof-of-authority consensus. |
 | `bvt-branding-and-docs` | Applies naming, attribution and documentation conventions to any external deliverable of a crypto project. |
 | `bvt-edge-ops` | Exposes and troubleshoots public endpoints (RPC, APIs, websites) through cloudflared tunnels and nginx. |
 | `bvt-governance-flow` | Executes changes through a two-of-three multisig and a 48-hour timelock. |
 | `bvt-incident-runbooks` | Responds to production incidents on a blockchain project. |
 | `bvt-l1-pow-ops` | Operates a proof-of-work L1 forked from Bitcoin or DigiByte, including multi-algorithm consensus. |
 | `bvt-solidity-standard` | Authors and reviews Solidity for a token ecosystem using OpenZeppelin patterns. |
+| `chain-relaunch-migration` | Migrates an EVM chain's full state into a new genesis for a relaunch or security remediation. |
+| `repo-ops-hygiene` | Keeps repositories free of secrets and safe to publish. |
 
 Written for public use: replace the example tokens, chains and app names with your own. Made by the BitVault team.
 

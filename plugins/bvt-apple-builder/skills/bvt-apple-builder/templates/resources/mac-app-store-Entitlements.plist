@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Mac App Store only. Save as src-tauri/Entitlements.plist and point
+  tauri.conf.json > bundle > macOS > entitlements at it.
+  The App Sandbox is required for the Mac App Store. network.client lets the app call the internet.
+-->
+<plist version="1.0">
+<dict>
+	<key>com.apple.security.app-sandbox</key>
+	<true/>
+	<key>com.apple.security.network.client</key>
+	<true/>
+	<key>com.apple.application-identifier</key>
+	<string>REPLACE_TEAM_ID.REPLACE_BUNDLE_ID</string>
+	<key>com.apple.developer.team-identifier</key>
+	<string>REPLACE_TEAM_ID</string>
+</dict>
+</plist>

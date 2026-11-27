@@ -1,7 +1,7 @@
 {
   "name": "bvt-crypto-architecture",
-  "version": "1.0.0",
-  "description": "Architecture playbooks for a centralized crypto exchange (ledger-first, single-writer matching engine) and a self-custody wallet (seed, storage, 2FA, send flow) across web, mobile and browser extension.",
+  "version": "1.1.0",
+  "description": "19 architecture playbooks for crypto exchanges, wallets and token platforms: matching engine, market data, trading API, liquidity, ledger, custody, deposits, fiat ramps, India VASP rules, stablecoins, oracles, bridges, wrapped tokens, mining pools, explorers and indexing.",
   "keywords": [
     "crypto",
     "exchange",

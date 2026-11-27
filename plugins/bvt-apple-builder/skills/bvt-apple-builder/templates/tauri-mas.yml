@@ -1,0 +1,134 @@
+# Save as .github/workflows/tauri-mas.yml
+# Tauri v2 app -> Mac App Store build (.pkg) -> App Store Connect.
+# Start it by hand: GitHub > Actions > tauri-mas > Run workflow.
+#
+# Needs in the repo:
+#   src-tauri/Entitlements.plist           <- templates/resources/mac-app-store-Entitlements.plist
+#   src-tauri/tauri.appstore.conf.json     <- templates/resources/tauri.appstore.conf.json
+# Needs as secrets (how to make them: references/setup-from-windows.md, section "Mac App Store"):
+#   MAS_APP_CERT_P12_BASE64, MAS_APP_CERT_PASSWORD, MAS_APP_SIGNING_IDENTITY   (Apple Distribution)
+#   MAS_INSTALLER_P12_BASE64, MAS_INSTALLER_P12_PASSWORD, MAS_INSTALLER_IDENTITY (Mac Installer Distribution)
+#   MAS_PROFILE_BASE64                                                           (Mac App Store profile)
+#   ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8_BASE64, ASC_APP_ID
+# Mac App Store apps are not notarized, so this job sets no notarization values.
+name: tauri-mas
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: tauri-mas
+  cancel-in-progress: false
+
+jobs:
+  mas:
+    # Image names and installed Xcode versions: https://github.com/actions/runner-images
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Pick Xcode (pinned on purpose)
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "26.6"
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install Rust for Apple-silicon and Intel Macs
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin,x86_64-apple-darwin
+
+      - name: Cache Rust build
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Install app packages
+        run: npm ci
+
+      - name: Put the profile and the App Store Connect key on the runner
+        env:
+          MAS_PROFILE_BASE64: ${{ secrets.MAS_PROFILE_BASE64 }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_KEY_P8_BASE64: ${{ secrets.ASC_KEY_P8_BASE64 }}
+        run: |
+          echo "$MAS_PROFILE_BASE64" | base64 --decode > src-tauri/embedded.provisionprofile
+          mkdir -p "$RUNNER_TEMP/keys"
+          echo "$ASC_KEY_P8_BASE64" | base64 --decode > "$RUNNER_TEMP/keys/AuthKey_${ASC_KEY_ID}.p8"
+          chmod 600 "$RUNNER_TEMP/keys/AuthKey_${ASC_KEY_ID}.p8"
+          echo "API_PRIVATE_KEYS_DIR=$RUNNER_TEMP/keys" >> "$GITHUB_ENV"
+
+      - name: Put the installer certificate in a temporary keychain
+        env:
+          P12_BASE64: ${{ secrets.MAS_INSTALLER_P12_BASE64 }}
+          P12_PASSWORD: ${{ secrets.MAS_INSTALLER_P12_PASSWORD }}
+        run: |
+          KEYCHAIN="$RUNNER_TEMP/installer.keychain-db"
+          KEYCHAIN_PASSWORD="$(uuidgen)"
+          echo "$P12_BASE64" | base64 --decode > "$RUNNER_TEMP/installer.p12"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security import "$RUNNER_TEMP/installer.p12" -k "$KEYCHAIN" -P "$P12_PASSWORD" -T /usr/bin/productbuild -T /usr/bin/pkgbuild
+          security set-key-partition-list -S apple-tool:,apple: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN" > /dev/null
+          security list-keychains -d user -s "$KEYCHAIN" $(security list-keychains -d user | tr -d '"')
+          rm "$RUNNER_TEMP/installer.p12"
+          echo "INSTALLER_KEYCHAIN=$KEYCHAIN" >> "$GITHUB_ENV"
+
+      - name: Write the build number into the App Store config
+        env:
+          BUILD: ${{ github.run_number }}
+        run: |
+          node -e "
+            const fs = require('fs');
+            const c = JSON.parse(fs.readFileSync('src-tauri/tauri.appstore.conf.json', 'utf8'));
+            c.bundle = c.bundle || {};
+            c.bundle.macOS = c.bundle.macOS || {};
+            c.bundle.macOS.bundleVersion = process.env.BUILD;
+            fs.writeFileSync('src-tauri/tauri.appstore.ci.conf.json', JSON.stringify(c, null, 2));
+          "
+
+      - name: Build and sign the app
+        run: npm run tauri build -- --bundles app --target universal-apple-darwin --config src-tauri/tauri.appstore.ci.conf.json
+        env:
+          APPLE_CERTIFICATE: ${{ secrets.MAS_APP_CERT_P12_BASE64 }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.MAS_APP_CERT_PASSWORD }}
+          APPLE_SIGNING_IDENTITY: ${{ secrets.MAS_APP_SIGNING_IDENTITY }}
+
+      - name: Make the installer package (.pkg)
+        env:
+          MAS_INSTALLER_IDENTITY: ${{ secrets.MAS_INSTALLER_IDENTITY }}
+        run: |
+          APP=$(ls -d src-tauri/target/universal-apple-darwin/release/bundle/macos/*.app | head -n 1)
+          # Apple asks that no file carries the download "quarantine" mark
+          xattr -dr com.apple.quarantine "$APP" || true
+          codesign --verify --deep --strict "$APP"
+          xcrun productbuild --sign "$MAS_INSTALLER_IDENTITY" --keychain "$INSTALLER_KEYCHAIN" \
+            --component "$APP" /Applications "$RUNNER_TEMP/app.pkg"
+          echo "PKG=$RUNNER_TEMP/app.pkg" >> "$GITHUB_ENV"
+
+      - name: Upload to App Store Connect
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_APP_ID: ${{ secrets.ASC_APP_ID }}
+        run: |
+          set -o pipefail
+          BUNDLE_ID=$(node -p "require('./src-tauri/tauri.conf.json').identifier")
+          VERSION=$(node -p "require('./src-tauri/tauri.conf.json').version || require('./package.json').version")
+          # If altool refuses "-t macos", use "-t osx" (the older name for the same platform)
+          xcrun altool --upload-package "$PKG" -t macos \
+            --apple-id "$ASC_APP_ID" \
+            --bundle-id "$BUNDLE_ID" \
+            --bundle-version "${{ github.run_number }}" \
+            --bundle-short-version-string "$VERSION" \
+            --apiKey "$ASC_KEY_ID" --apiIssuer "$ASC_ISSUER_ID" 2>&1 | tee "$RUNNER_TEMP/upload.log"
+          if grep -Eq "ERROR ITMS|\*\*\* Error|Failed to upload|Unable to upload" "$RUNNER_TEMP/upload.log"; then
+            echo "The upload log contains an error."
+            exit 1
+          fi

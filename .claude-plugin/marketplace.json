@@ -1,6 +1,6 @@
 {
   "name": "bvt-skills",
-  "description": "Free Claude skills and plugins from the BitVault team: multilingual apps, token saving, crypto exchange and wallet architecture, and 50 engineering playbooks for localization, crypto apps and chain operations.",
+  "description": "Free Claude skills and plugins from the BitVault team: 133 skills in 9 plugins. Multilingual apps, token saving, iPhone and Mac apps with no Mac, crypto exchange, wallet, smart contract and chain playbooks, and loaders for 40+ popular open-source skill packs.",
   "owner": {
     "name": "BitVault Founding Team",
     "url": "https://bitvault.club"
@@ -9,7 +9,7 @@
     {
       "name": "bvt-multi-language",
       "source": "./plugins/bvt-multi-language",
-      "description": "Language switcher and full multilingual system for any website or app, translation into as many languages as possible, and a quality gate before release.",
+      "description": "BVT Multi Language: adds a language switcher and a full multilingual system to any website or app, translates it into as many languages as possible, and checks quality before release.",
       "category": "development"
     },
     {
@@ -21,7 +21,7 @@
     {
       "name": "bvt-crypto-architecture",
       "source": "./plugins/bvt-crypto-architecture",
-      "description": "Architecture playbooks for a centralized crypto exchange and a self-custody wallet.",
+      "description": "19 architecture playbooks for crypto exchanges, wallets and token platforms: matching engine, market data, trading API, liquidity, ledger, custody, deposits, fiat ramps, India VASP rules, stablecoins, oracles, bridges, wrapped tokens, mining pools, explorers and indexing.",
       "category": "development"
     },
     {
@@ -39,8 +39,26 @@
     {
       "name": "bvt-chain-ops",
       "source": "./plugins/bvt-chain-ops",
-      "description": "6 blockchain operations playbooks: Solidity standard with OpenZeppelin, multisig plus timelock governance, PoW multi-algorithm L1 operations, cloudflared and nginx edge ops, incident runbooks and project documentation rules.",
+      "description": "9 blockchain operations playbooks: Solidity standard, multisig plus timelock governance, PoW L1 and Besu Clique operations, chain relaunch, edge ops, incident runbooks, repo hygiene and project documentation rules.",
       "category": "development"
+    },
+    {
+      "name": "bvt-smart-contracts",
+      "source": "./plugins/bvt-smart-contracts",
+      "description": "7 smart contract and wallet-connection playbooks: ethers v6, safe upgrades, EVM storage surgery, pre-audit checklist, dapp connectivity (EIP-6963, WalletConnect), MetaMask fixes and Manifest V3 extension limits.",
+      "category": "development"
+    },
+    {
+      "name": "bvt-apple-builder",
+      "source": "./plugins/bvt-apple-builder",
+      "description": "Build, sign and ship iPhone, iPad and Mac apps with no Mac: Claude writes the code and build files, a cloud Mac builds them, Claude reads the build log and fixes errors. Expo, Tauri, Flutter and SwiftUI.",
+      "category": "development"
+    },
+    {
+      "name": "bvt-skill-loaders",
+      "source": "./plugins/bvt-skill-loaders",
+      "description": "43 loaders for popular open-source skill packs (Firecrawl, PostHog, Composio, gstack, Ponytail, Three.js, Blender, GSAP, Expo, Firebase, OpenZeppelin, Trail of Bits and more), each pinned to a reviewed commit, plus Openverse sound search.",
+      "category": "productivity"
     }
   ]
 }

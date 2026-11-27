@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Save as src-tauri/Info.ios.plist. Tauri merges it into the iPhone app's Info.plist.
+  Check Tauri's iOS docs if a key does not show up in the built app.
+  Remove the keys the app does not need. Write the reason texts in plain words.
+-->
+<plist version="1.0">
+<dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<REPLACE_false_OR_true/>
+	<key>NSFaceIDUsageDescription</key>
+	<string>REPLACE_WHY_THE_APP_USES_FACE_ID</string>
+	<key>NSCameraUsageDescription</key>
+	<string>REPLACE_WHY_THE_APP_USES_THE_CAMERA</string>
+</dict>
+</plist>

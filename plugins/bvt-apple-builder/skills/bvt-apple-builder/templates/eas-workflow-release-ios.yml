@@ -1,0 +1,27 @@
+# Save as .eas/workflows/release-ios.yml
+# Expo app -> cloud Mac build -> TestFlight, as one EAS Workflow.
+# Start it: `eas workflow:run release-ios.yml`, or the Expo connector's workflow_run tool, or push a tag.
+# One time before the first run: `eas credentials` (iOS, production) so EAS has the signing files and the API key.
+name: Release iOS
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ["ios-v*"]
+
+jobs:
+  build_ios:
+    name: Build iOS
+    type: build
+    params:
+      platform: ios
+      profile: production
+
+  testflight:
+    name: Send to TestFlight
+    type: testflight
+    needs: [build_ios]
+    params:
+      build_id: ${{ needs.build_ios.outputs.build_id }}
+      # internal_groups: ["QA Team"]   <- name of a TestFlight group, if one exists
+      changelog: "Build from EAS Workflows"

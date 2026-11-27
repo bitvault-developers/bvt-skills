@@ -1,0 +1,4 @@
+# Save as Gemfile next to the fastlane/ folder (repo root for native apps, ios/ for Flutter and React Native)
+source "https://rubygems.org"
+
+gem "fastlane", ">= 2.230.0"

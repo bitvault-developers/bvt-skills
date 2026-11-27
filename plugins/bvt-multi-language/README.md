@@ -2,6 +2,17 @@
 
 A Claude skill that makes any website or app multilingual: a language switcher, language files, right-to-left support, SEO for every language, translation into as many languages as possible, and a quality check before release.
 
+## Skills
+
+| Skill | What it does |
+|---|---|
+| `adding-language-switching` | Adds a full multilingual system and language switcher to any website, web app, mobile app, desktop app, WordPress, Flutter or FlutterFlow project. |
+| `bvt-multi-language` | BVT Multi Language Skill. |
+| `checking-translation-quality` | Checks a multilingual product before release - missing keys, broken placeholders and ICU syntax, untranslated or overlong strings, hard-coded text, pseudo-locale and RTL layout tests, Claude review and post-editing, human review, and attribution, privacy and language-law checks. |
+| `translating-app-languages` | Translates an app's locale files into many languages (Google, Azure, DeepL, LibreTranslate, MADLAD or Claude itself) with caching, glossaries, cost estimates and quality tiers, and adds live translation for user content. |
+
+`bvt-multi-language` is the main skill. The other three are the same playbook split by job, for when you only need the switcher, only translation, or only the release check.
+
 ## Install
 
 ```text

@@ -1,0 +1,23 @@
+{
+  "name": "bvt-skill-loaders",
+  "version": "1.0.0",
+  "description": "43 loaders for popular open-source skill packs (Firecrawl, PostHog, Composio, gstack, Ponytail, Three.js, Blender, GSAP, Expo, Firebase, OpenZeppelin, Trail of Bits and more), each pinned to a reviewed commit, plus Openverse sound search.",
+  "keywords": [
+    "skills",
+    "loader",
+    "firecrawl",
+    "posthog",
+    "threejs",
+    "blender",
+    "security",
+    "video",
+    "design"
+  ],
+  "author": {
+    "name": "BitVault Founding Team",
+    "url": "https://bitvault.club"
+  },
+  "homepage": "https://github.com/bitvault-developers/bvt-skills",
+  "repository": "https://github.com/bitvault-developers/bvt-skills",
+  "license": "MIT"
+}

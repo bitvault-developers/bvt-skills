@@ -1,0 +1,24 @@
+{
+  "name": "bvt-apple-builder",
+  "displayName": "BVT Apple Builder",
+  "version": "0.3.0",
+  "description": "Build, sign and ship iPhone, iPad and Mac apps with no Mac: Claude writes the code and build files, a cloud Mac builds them, Claude reads the build log and fixes errors. Expo, Tauri, Flutter and SwiftUI.",
+  "keywords": [
+    "ios",
+    "ipados",
+    "macos",
+    "testflight",
+    "expo",
+    "tauri",
+    "flutter",
+    "swiftui",
+    "no-mac"
+  ],
+  "author": {
+    "name": "BitVault Founding Team",
+    "url": "https://bitvault.club"
+  },
+  "homepage": "https://github.com/bitvault-developers/bvt-skills",
+  "repository": "https://github.com/bitvault-developers/bvt-skills",
+  "license": "MIT"
+}

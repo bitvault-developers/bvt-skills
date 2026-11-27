@@ -1,0 +1,6 @@
+# Save as fastlane/Matchfile
+git_url(ENV["MATCH_GIT_URL"])
+storage_mode("git")
+type("appstore")
+app_identifier(["REPLACE_BUNDLE_ID"])
+team_id(ENV["APPLE_TEAM_ID"])
